@@ -1,0 +1,191 @@
+.music-player {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 260px;
+    background: linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%);
+    border: 2px solid #555;
+    border-radius: 4px;
+    z-index: 101;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.winamp-header {
+    background: linear-gradient(90deg, #000080, #008080);
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    border-bottom: 1px solid #222;
+}
+
+.header-dots {
+    font-size: 8px;
+    color: #ff6b6b;
+    letter-spacing: 2px;
+}
+
+.header-title {
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.track-info {
+    padding: 8px 10px;
+    background: #000;
+    margin: 5px;
+    border: 1px inset #444;
+}
+
+.track-title {
+    color: var(--neon-green);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    animation: scroll-text 8s linear infinite;
+}
+
+.track-artist {
+    color: var(--cyan);
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.winamp-vis {
+    height: 50px;
+    background: #000;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    padding: 3px;
+    margin: 0 5px;
+    border: 1px inset #444;
+}
+
+.vis-bar {
+    flex: 1;
+    min-height: 3px;
+    transition: height 0.08s ease-out;
+    border-radius: 1px 1px 0 0;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #222;
+    margin: 5px;
+    border: 1px inset #444;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-green), var(--cyan));
+    transition: width 0.3s linear;
+    box-shadow: 0 0 5px var(--neon-green);
+}
+
+.winamp-controls {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+}
+
+.winamp-controls button {
+    width: 40px;
+    height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+    background: linear-gradient(180deg, #555 0%, #333 100%);
+    border: 1px outset #666;
+    color: white;
+    border-radius: 3px;
+    transition: all 0.1s;
+}
+
+.winamp-controls button:hover {
+    background: linear-gradient(180deg, #666 0%, #444 100%);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.winamp-controls button:active {
+    border-style: inset;
+    transform: translateY(1px);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    background: #222;
+    margin: 0 5px;
+    border-radius: 3px;
+}
+
+.volume-icon {
+    font-size: 14px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    background: #444;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--neon-green);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.track-counter {
+    text-align: center;
+    padding: 6px;
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    color: var(--safety-yellow);
+    background: #111;
+    margin: 5px;
+    border: 1px inset #333;
+    letter-spacing: 1px;
+}
+
+@keyframes scroll-text {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    80%,
+    100% {
+        transform: translateX(-50%);
+    }
+}

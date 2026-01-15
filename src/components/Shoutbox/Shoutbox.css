@@ -1,0 +1,162 @@
+.shoutbox {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    width: 220px;
+    bottom: 80px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--neon-green);
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+}
+
+.shoutbox-header {
+    background: var(--neon-green);
+    color: black;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.status-dot.connected {
+    background: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.shout-feed {
+    flex-grow: 1;
+    font-size: 13px;
+    overflow-y: auto;
+    color: var(--neon-green);
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 4px;
+}
+
+.shout-feed::-webkit-scrollbar {
+    width: 6px;
+}
+
+.shout-feed::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.shout-feed::-webkit-scrollbar-thumb {
+    background: var(--neon-green);
+}
+
+.no-messages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgba(57, 255, 20, 0.5);
+    font-family: 'VT323', monospace;
+    text-align: center;
+}
+
+.shout-message {
+    font-family: 'VT323', monospace;
+    line-height: 1.3;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.shout-message .username {
+    color: var(--hot-pink);
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.shout-message .msg-text {
+    color: var(--neon-green);
+    word-break: break-word;
+}
+
+.shout-message .timestamp {
+    color: rgba(57, 255, 20, 0.4);
+    font-size: 10px;
+    margin-left: 6px;
+}
+
+.shout-input-container {
+    display: flex;
+    border-top: 2px solid var(--neon-green);
+}
+
+.shout-input {
+    flex: 1;
+    background: #111;
+    border: none;
+    padding: 10px;
+    color: var(--neon-green);
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.shout-input::placeholder {
+    color: rgba(57, 255, 20, 0.4);
+}
+
+.send-btn {
+    background: var(--neon-green);
+    border: none;
+    color: #000;
+    padding: 10px 15px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.send-btn:hover:not(:disabled) {
+    background: var(--cyan);
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.shoutbox-footer {
+    background: #111;
+    padding: 5px 10px;
+    font-family: 'VT323', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    border-top: 1px solid rgba(57, 255, 20, 0.3);
+}
+
+.your-name {
+    text-transform: uppercase;
+}

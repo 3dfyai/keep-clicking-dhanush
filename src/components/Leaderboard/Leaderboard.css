@@ -1,0 +1,111 @@
+.leaderboard {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--safety-yellow);
+    z-index: 102;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+}
+
+.leaderboard-header {
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+    color: #000;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-icon {
+    font-size: 8px;
+}
+
+.leaderboard-content {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.score-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.no-scores {
+    text-align: center;
+    color: var(--safety-yellow);
+    font-family: 'VT323', monospace;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+.score-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+}
+
+.score-entry.current-user {
+    background: rgba(57, 255, 20, 0.2);
+    border: 1px solid var(--neon-green);
+}
+
+.score-entry .rank {
+    width: 30px;
+    text-align: center;
+    color: var(--safety-yellow);
+}
+
+.score-entry .name {
+    flex: 1;
+    color: var(--hot-pink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.score-entry .score {
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+.your-rank {
+    margin-top: 10px;
+    padding: 8px;
+    background: rgba(57, 255, 20, 0.1);
+    border: 1px solid var(--neon-green);
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    color: var(--neon-green);
+}
+
+.current-session {
+    margin-top: 8px;
+    padding: 8px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--cyan);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    color: var(--cyan);
+}
+
+.session-score {
+    color: var(--neon-green);
+    font-weight: bold;
+}

@@ -1,0 +1,221 @@
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image:
+        linear-gradient(rgba(26, 0, 26, 0.8), rgba(26, 0, 26, 0.8)),
+        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    overflow: hidden;
+}
+
+.tiled-bg {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(57, 255, 20, 0.05) 40px, rgba(57, 255, 20, 0.05) 80px);
+    z-index: 0;
+}
+
+.hero-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.hero-label {
+    color: var(--cyan);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-sublabel {
+    color: var(--safety-yellow);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+.window-container {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.window-container>* {
+    pointer-events: auto;
+}
+
+.emoji-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Overload Popup */
+.overload-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: red;
+    color: white;
+    padding: 50px;
+    border: 10px solid yellow;
+    z-index: 20000;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+.overload-popup.visible {
+    display: block;
+}
+
+.overload-popup h1 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+.overload-popup p {
+    margin: 10px 0;
+}
+
+.overload-popup .subtext {
+    font-size: 12px;
+}
+
+/* Milestone Screen Effects */
+.dashboard.milestone-pulse {
+    animation: screen-pulse 0.5s ease-out;
+}
+
+.dashboard.milestone-glow {
+    box-shadow: inset 0 0 100px rgba(0, 255, 255, 0.3);
+    animation: screen-glow 2s ease-out;
+}
+
+.dashboard.milestone-fire {
+    box-shadow: inset 0 0 150px rgba(255, 136, 0, 0.4);
+    animation: screen-fire 3s ease-out;
+}
+
+.dashboard.milestone-rainbow {
+    animation: screen-rainbow 3s linear;
+}
+
+.dashboard.milestone-legendary {
+    box-shadow: inset 0 0 200px rgba(255, 0, 255, 0.5);
+    animation: screen-legendary 3s ease-out;
+}
+
+.dashboard.milestone-godlike {
+    animation: screen-godlike 3s;
+}
+
+.dashboard.milestone-transcendent {
+    animation: screen-transcend 3s;
+}
+
+@keyframes screen-pulse {
+    0% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+@keyframes screen-glow {
+    0% {
+        box-shadow: inset 0 0 200px rgba(0, 255, 255, 0.6);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0px transparent;
+    }
+}
+
+@keyframes screen-fire {
+
+    0%,
+    10% {
+        box-shadow: inset 0 0 200px rgba(255, 136, 0, 0.6);
+        filter: brightness(1.3) saturate(1.5);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0px transparent;
+        filter: brightness(1) saturate(1);
+    }
+}
+
+@keyframes screen-rainbow {
+    0% {
+        filter: hue-rotate(0deg) brightness(1.2);
+    }
+
+    50% {
+        filter: hue-rotate(180deg) brightness(1.4);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) brightness(1);
+    }
+}
+
+@keyframes screen-legendary {
+
+    0%,
+    20% {
+        box-shadow: inset 0 0 300px rgba(255, 0, 255, 0.7);
+        filter: brightness(1.5) contrast(1.2);
+    }
+
+    100% {
+        box-shadow: inset 0 0 0px transparent;
+        filter: brightness(1) contrast(1);
+    }
+}
+
+@keyframes screen-godlike {
+
+    0%,
+    10%,
+    20%,
+    30% {
+        filter: invert(1) hue-rotate(180deg);
+    }
+
+    5%,
+    15%,
+    25%,
+    35% {
+        filter: invert(0);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+@keyframes screen-transcend {
+    0% {
+        filter: brightness(3) blur(10px);
+    }
+
+    20% {
+        filter: brightness(2) blur(5px);
+    }
+
+    100% {
+        filter: brightness(1) blur(0px);
+    }
+}

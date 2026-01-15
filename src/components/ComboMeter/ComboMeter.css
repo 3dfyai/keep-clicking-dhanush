@@ -1,0 +1,142 @@
+/* Combo Overlay - positioned below the button */
+.combo-overlay {
+    margin-top: 15px;
+    text-align: center;
+    min-width: 200px;
+    min-height: 80px;
+}
+
+/* Combo Display */
+.combo-display {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--combo-color, #00ff00);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    box-shadow:
+        0 0 20px var(--combo-color),
+        0 0 40px var(--combo-color),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: combo-glow 0.3s ease-out;
+}
+
+@keyframes combo-glow {
+    0% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.combo-multiplier {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    color: var(--combo-color, #00ff00);
+    text-shadow:
+        0 0 10px var(--combo-color),
+        0 0 20px var(--combo-color),
+        0 0 30px var(--combo-color);
+    animation: pulse-glow 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        text-shadow: 0 0 10px var(--combo-color), 0 0 20px var(--combo-color);
+    }
+
+    100% {
+        text-shadow: 0 0 20px var(--combo-color), 0 0 40px var(--combo-color), 0 0 60px var(--combo-color);
+    }
+}
+
+.combo-tier {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--combo-color);
+    margin-top: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--combo-color);
+    animation: shake 0.1s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(-1px);
+    }
+
+    50% {
+        transform: translateX(1px);
+    }
+}
+
+/* Timer bar showing combo decay */
+.combo-timer-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.combo-timer-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg,
+            var(--combo-color) 0%,
+            #ffffff 50%,
+            var(--combo-color) 100%);
+    background-size: 200% 100%;
+    animation: timer-drain 1s linear forwards, shimmer 0.5s linear infinite;
+}
+
+@keyframes timer-drain {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Milestone Badge */
+.milestone-badge {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    color: var(--milestone-color);
+    padding: 5px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--milestone-color);
+    border-radius: 5px;
+    text-shadow: 0 0 10px var(--milestone-color);
+    box-shadow: 0 0 15px var(--milestone-color);
+    animation: badge-pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes badge-pulse {
+    0% {
+        box-shadow: 0 0 10px var(--milestone-color);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 25px var(--milestone-color), 0 0 35px var(--milestone-color);
+        transform: scale(1.02);
+    }
+}

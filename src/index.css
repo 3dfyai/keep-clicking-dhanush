@@ -1,0 +1,94 @@
+:root {
+  --neon-green: #39FF14;
+  --hot-pink: #FF69B4;
+  --cyan: #00FFFF;
+  --safety-yellow: #FFFF00;
+  --deep-purple: #1A001A;
+  --hex-black: #000000;
+  --win-blue: #000080;
+  --win-gray: #c0c0c0;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/games/gam-4/gam372.cur'), auto;
+  user-select: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hex-black);
+  font-family: 'VT323', monospace;
+  overflow: hidden;
+  color: var(--neon-green);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Scanline & Noise Overlays */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Noise_Texture.png");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Screen Shake */
+.shake {
+  animation: shake-anim 0.2s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake-anim {
+  10%, 90% { transform: translate3d(-2px, -2px, 0); }
+  20%, 80% { transform: translate3d(4px, 4px, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, -6px, 0); }
+  40%, 60% { transform: translate3d(6px, 6px, 0); }
+}
+
+/* Overload State */
+.overload {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Floating animation */
+@keyframes float {
+  from { transform: translateY(110vh) rotate(0deg); }
+  to { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 24px;
+  z-index: 1000;
+}

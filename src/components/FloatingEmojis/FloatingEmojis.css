@@ -1,0 +1,8 @@
+.floating-emoji {
+    position: absolute;
+    font-size: 40px;
+    animation: float 15s linear forwards;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+}

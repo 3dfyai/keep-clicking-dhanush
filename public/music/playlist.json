@@ -1,0 +1,19 @@
+{
+    "songs": [
+        {
+            "title": "SONG NAME 1",
+            "artist": "Artist Name",
+            "file": "song1.mp3"
+        },
+        {
+            "title": "SONG NAME 2",
+            "artist": "Artist Name",
+            "file": "song2.mp3"
+        },
+        {
+            "title": "SONG NAME 3",
+            "artist": "Artist Name",
+            "file": "song3.mp3"
+        }
+    ]
+}

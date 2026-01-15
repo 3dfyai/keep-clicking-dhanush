@@ -1,0 +1,67 @@
+.boot-screen {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+
+.boot-log {
+    flex-grow: 1;
+    overflow: hidden;
+    color: var(--neon-green);
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.progress-container {
+    width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.progress-bar {
+    border: 2px solid var(--neon-green);
+    padding: 4px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--neon-green);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.progress-text {
+    color: var(--neon-green);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.enter-btn {
+    display: none;
+    margin: 0 auto;
+    background: var(--safety-yellow);
+    color: black;
+    border: 4px outset #fff;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 10px 10px 0px var(--hot-pink);
+    transition: all 0.1s;
+}
+
+.enter-btn.visible {
+    display: block;
+}
+
+.enter-btn:active {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+}
+
+.enter-btn:hover {
+    background: #ffff66;
+}

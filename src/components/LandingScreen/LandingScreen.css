@@ -1,0 +1,260 @@
+.landing-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* GIF Grid - fills entire screen with no gaps */
+.gif-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    z-index: 1;
+}
+
+.gif-cell {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.gif-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: gif-pop 1s ease-out;
+}
+
+@keyframes gif-pop {
+    0% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Dimming overlay - lighter so GIFs show through */
+.dim-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0.5) 100%);
+    z-index: 2;
+}
+
+/* Animated star background */
+.stars-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 230px 80px, white, transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.7), transparent);
+    background-size: 350px 200px;
+    animation: twinkle 4s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: 3;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+}
+
+.logo-button {
+    background: transparent;
+    border: none;
+    padding: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.logo-button:hover {
+    transform: scale(1.05);
+}
+
+.logo-button:active {
+    transform: scale(0.98);
+}
+
+/* Multi-color glow effect */
+.logo-glow {
+    position: absolute;
+    inset: -20px;
+    background: conic-gradient(from 0deg,
+            #ff00ff,
+            #00ffff,
+            #ffff00,
+            #ff00ff,
+            #00ff00,
+            #ff0000,
+            #ff00ff);
+    filter: blur(40px);
+    opacity: 0.6;
+    border-radius: 20px;
+    animation: glow-rotate 4s linear infinite, breathe 3s ease-in-out infinite;
+}
+
+@keyframes glow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+.logo-button.hovered .logo-glow {
+    opacity: 1;
+    filter: blur(50px);
+    animation: glow-rotate 2s linear infinite, breathe-fast 1.5s ease-in-out infinite;
+}
+
+@keyframes breathe-fast {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15) rotate(180deg);
+    }
+}
+
+.logo-image {
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+    width: 90vw;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    animation: logo-float 4s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.click-hint {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+    animation: hint-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hint-pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+
+.hint-arrow {
+    animation: arrow-bounce 1s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+.hint-text {
+    letter-spacing: 3px;
+}
+
+/* Scan line effect */
+.landing-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px);
+    pointer-events: none;
+    z-index: 100;
+}

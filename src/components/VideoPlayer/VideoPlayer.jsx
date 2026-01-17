@@ -13,7 +13,7 @@ export default function VideoPlayer({ onComplete }) {
                 // If autoplay fails, still allow skipping
             });
 
-            // Handle video end
+            // Handle video end - transition to username screen after video completes
             const handleEnded = () => {
                 onComplete();
             };
@@ -32,7 +32,7 @@ export default function VideoPlayer({ onComplete }) {
             <video
                 ref={videoRef}
                 className="intro-video"
-                src="/keep clicking website loading screen.mp4"
+                src="/JUST_KEEP_CLICKING.mp4"
                 playsInline
             />
             <button className="skip-btn" onClick={handleSkip}>

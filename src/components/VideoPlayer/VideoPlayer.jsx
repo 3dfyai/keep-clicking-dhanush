@@ -32,7 +32,7 @@ export default function VideoPlayer({ onComplete }) {
             <video
                 ref={videoRef}
                 className="intro-video"
-                src="/JUST_KEEP_CLICKING.mp4"
+                src="/JUST_KEEP_CLICKING.webm"
                 playsInline
             />
             <button className="skip-btn" onClick={handleSkip}>

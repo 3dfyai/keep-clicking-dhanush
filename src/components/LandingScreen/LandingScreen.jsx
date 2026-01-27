@@ -63,7 +63,7 @@ export default function LandingScreen({ onStart }) {
     }, [replaceTile]);
 
     return (
-        <div className="landing-screen">
+        <div className="landing-screen" onClick={onStart}>
             {/* GIF Grid Background - fills entire screen */}
             <div className="gif-grid">
                 {tiles.map(tile => (
@@ -94,7 +94,10 @@ export default function LandingScreen({ onStart }) {
             <div className="landing-content">
                 <button
                     className={`logo-button ${isHovered ? 'hovered' : ''}`}
-                    onClick={onStart}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onStart();
+                    }}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                     aria-label="Start Experience"

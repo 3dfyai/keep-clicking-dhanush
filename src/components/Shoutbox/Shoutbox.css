@@ -109,7 +109,13 @@
 
 .shout-input-container {
     display: flex;
+    flex-direction: column;
     border-top: 2px solid var(--neon-green);
+    position: relative;
+}
+
+.shout-input-wrapper {
+    display: flex;
 }
 
 .shout-input {
@@ -121,6 +127,11 @@
     font-family: 'VT323', monospace;
     font-size: 14px;
     outline: none;
+}
+
+.shout-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .shout-input::placeholder {
@@ -159,4 +170,32 @@
 
 .your-name {
     text-transform: uppercase;
+}
+
+.spam-error {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 4px 8px;
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    animation: spam-error-shake 0.3s ease;
+    z-index: 10;
+}
+
+@keyframes spam-error-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
 }

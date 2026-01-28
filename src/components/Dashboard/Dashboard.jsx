@@ -191,6 +191,30 @@ export default function Dashboard({ username }) {
 
     return (
         <main className={`dashboard ${isShaking ? 'shake' : ''} ${isOverloaded ? 'overload' : ''} ${milestoneEffect ? `milestone-${milestoneEffect}` : ''}`}>
+            {/* Top Bar with X Icon and Contract Address */}
+            <div className="top-bar">
+                <a 
+                    href="https://x.com/keepclicking__" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="x-icon-link"
+                    aria-label="Follow on X"
+                >
+                    <svg 
+                        className="x-icon" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <div className="contract-address">
+                    <span className="contract-label">CA:</span>
+                    <span className="contract-value">C5CUoL8u4dWHDpWcZR49bD8SEHEv8mVWkLh4jkiapump</span>
+                </div>
+            </div>
+
             {/* GIF Collage Background */}
             <GifCollage />
 

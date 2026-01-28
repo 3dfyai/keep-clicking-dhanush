@@ -8,6 +8,90 @@
     overflow: hidden;
 }
 
+/* Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-green);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(57, 255, 20, 0.3);
+}
+
+.x-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.x-icon-link:hover {
+    color: var(--neon-green);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+.x-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.contract-address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--neon-green);
+    font-size: 14px;
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.contract-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contract-value {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.5px;
+    user-select: all;
+    cursor: text;
+}
+
+.contract-value:hover {
+    color: var(--safety-yellow);
+    text-shadow: 0 0 10px var(--safety-yellow);
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .contract-address {
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+
+    .contract-value {
+        word-break: break-all;
+    }
+}
+
 .tiled-bg {
     position: absolute;
     inset: 0;

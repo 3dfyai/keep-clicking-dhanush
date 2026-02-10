@@ -211,7 +211,7 @@ export default function Dashboard({ username }) {
                 </a>
                 <div className="contract-address">
                     <span className="contract-label">CA:</span>
-                    <span className="contract-value">C5CUoL8u4dWHDpWcZR49bD8SEHEv8mVWkLh4jkiapump</span>
+                    <span className="contract-value">FhfA8DqJTVsS3WfymUdNhy8UycSz66vQkkAc2BFapump</span>
                 </div>
             </div>
 
